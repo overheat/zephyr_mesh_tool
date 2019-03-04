@@ -19,10 +19,11 @@ client.begin(MQTT_USERNAME, MQTT_PASSWORD, MQTT_CLIENT_ID, loglevel=logging.INFO
 # For a secure connection use port 8883 when calling client.begin:
 # client.begin(MQTT_USERNAME, MQTT_PASSWORD, MQTT_CLIENT_ID, port=8883, loglevel=logging.INFO)
 
-i=0
 timestamp = 0
+mesh_dict = {}
+
                     
-#print (ser.portstr)       # check which port was really used  
+# point which port was really used  
 print('Please input serial port number:')
 serPortNum = input()
 serPort = 'COM' + serPortNum
@@ -44,18 +45,20 @@ while True:
     
     line = ser.readline()# read a '\n' terminated line
     if(line!=b''):
-        line_str = line.decode('utf-8')
-        #print (line_str,end='')
-        if line_str.startswith('src 0x'):
-            #print (line_str[6:10])
-            i = int(line_str[8:10])
-            #print (i)
+        if line.startswith(b'src '):
+            mesh_node_id = int(str(line[4:10], encoding="utf-8"), 16)
+            mesh_dict[mesh_node_id] = time.time()
+            #print(mesh_node_id)
+
 
         
-    if (time.time() > timestamp + 10):
-        client.celsiusWrite(1, i)
-        client.celsiusWrite(2, i)
-        client.celsiusWrite(3, i)
+    if (time.time() > timestamp + 5):
+        for mesh_node_id in mesh_dict.keys():
+            #print(mesh_node_id)
+            if(time.time() > mesh_dict[mesh_node_id] + 10):
+                client.celsiusWrite(mesh_node_id, 0)
+            else:
+                client.celsiusWrite(mesh_node_id, 1)
+
         timestamp = time.time()
-        i = i+1
     
