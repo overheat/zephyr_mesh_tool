@@ -2,6 +2,7 @@
 import cayenne.client
 import time
 import logging
+import sys
 
 import serial
 from time import sleep  
@@ -26,12 +27,17 @@ print('Please input serial port number:')
 serPortNum = input()
 serPort = 'COM' + serPortNum
 
-ser = serial.Serial(serPort, # Device name varies
-                    baudrate=115200,
-                    bytesize=8,
-                    parity='N',
-                    stopbits=1,
-                    timeout=1)
+try:
+    ser = serial.Serial(serPort, # Device name varies
+                        baudrate=115200,
+                        bytesize=8,
+                        parity='N',
+                        stopbits=1,
+                        timeout=1)
+except serial.serialutil.SerialException:
+    print('Wrong serial port number, try again.')
+    sys.exit()
+
         
 while True:
     client.loop()
