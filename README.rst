@@ -43,8 +43,7 @@ Demo
 Connect any mesh node's serial port to your PC or Raspberry Pi, then
 
 On ubuntu:
-  cd app 
-  python3 mesh.py
+  python3 app/mesh.py
 
 Documentation
 -------------
