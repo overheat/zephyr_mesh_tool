@@ -1,6 +1,6 @@
 Zephyr mesh demo python tool
 ****************************
-The Zephyr mesh demo python tool provides functions to easily grab data from `zephyr mesh demo <https://github.com/zephyrproject-rtos/zephyr/tree/master/samples/bluetooth/mesh_demo>`_. nodes and connect to the `Cayenne IoT project builder <https://mydevices.com>`_. With it you can send zephyr mesh demo data to Cayenne.
+The Zephyr mesh demo python tool provides functions to easily grab data from `zephyr mesh demo <https://github.com/zephyrproject-rtos/zephyr/tree/master/samples/bluetooth/mesh_demo>`_ nodes and connect to the `Cayenne IoT project builder <https://mydevices.com>`_. With it you can send zephyr mesh demo data to Cayenne.
 
 .. image:: img.png
 
