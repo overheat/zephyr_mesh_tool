@@ -41,8 +41,9 @@ Cayenne Setup
 Demo
 -------------
 Connect any mesh node's serial port to your PC or Raspberry Pi, then
+
 On ubuntu:
-  cd app
+  cd app 
   python3 mesh.py
 
 Documentation
