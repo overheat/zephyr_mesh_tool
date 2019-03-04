@@ -42,13 +42,20 @@ except serial.serialutil.SerialException:
 while True:
     client.loop()
     
+    line = ser.readline()# read a '\n' terminated line
+    if(line!=b''):
+        line_str = line.decode('utf-8')
+        #print (line_str,end='')
+        if line_str.startswith('src 0x'):
+            #print (line_str[6:10])
+            i = int(line_str[8:10])
+            #print (i)
+
+        
     if (time.time() > timestamp + 10):
         client.celsiusWrite(1, i)
-        client.luxWrite(2, i*10)
-        client.hectoPascalWrite(3, i+800)
+        client.celsiusWrite(2, i)
+        client.celsiusWrite(3, i)
         timestamp = time.time()
         i = i+1
     
-    line = ser.readline()# read a '\n' terminated line
-    if(line!=b''):
-        print (str(line, encoding = "utf-8"),end='')
