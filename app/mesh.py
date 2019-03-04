@@ -45,4 +45,4 @@ while True:
     
     line = ser.readline()# read a '\n' terminated line
     if(line!=b''):
-        print (str(line, encoding = "utf-8"))
+        print (str(line, encoding = "utf-8"),end='')
