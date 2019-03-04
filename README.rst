@@ -2,6 +2,8 @@ Zephyr mesh demo python tool
 ****************************
 The Zephyr mesh demo python tool provides functions to easily connect to the `Cayenne IoT project builder <https://mydevices.com>`_. With it you can send zephyr mesh demo data to Cayenne.
 
+.. image:: img.png
+
 Requirements
 ============
 * `Python 2.7.9+ or 3.4+ <https://www.python.org/downloads/>`_.
@@ -15,14 +17,17 @@ Installation
 This library can be installed using pip:
 ::
 
+On ubuntu:
   pip install cayenne-mqtt
+  pip3 install pyserial
 
 It can also be installed from the repository:
 ::
 
+On ubuntu:
   git clone https://github.com/myDevicesIoT/Cayenne-MQTT-Python
   cd Cayenne-MQTT-Python
-  python setup.py install
+  python3 setup.py install
   
 Cayenne Setup
 -------------
