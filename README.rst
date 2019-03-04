@@ -1,6 +1,6 @@
 Zephyr mesh demo python tool
 ****************************
-The Zephyr mesh demo python tool provides functions to easily connect to the `Cayenne IoT project builder <https://mydevices.com>`_. With it you can send zephyr mesh demo data to Cayenne.
+The Zephyr mesh demo python tool provides functions to easily grab data from `zephyr mesh demo <https://github.com/zephyrproject-rtos/zephyr/tree/master/samples/bluetooth/mesh_demo>`_. nodes and connect to the `Cayenne IoT project builder <https://mydevices.com>`_. With it you can send zephyr mesh demo data to Cayenne.
 
 .. image:: img.png
 
@@ -9,6 +9,10 @@ Requirements
 * `Python 2.7.9+ or 3.4+ <https://www.python.org/downloads/>`_.
 * `This library <https://github.com/myDevicesIoT/Cayenne-MQTT-Python/archive/master.zip>`_.
 * `Eclipse Paho MQTT Python client library <https://github.com/eclipse/paho.mqtt.python>`_. This is installed as part of the Cayenne library installation.
+* `Raspberry Pi <https://www.raspberrypi.org/>`_. or PC
+* Running zephyr project mesh demo.
+
+
 
 Getting Started
 ===============
@@ -36,6 +40,7 @@ Cayenne Setup
 
 Demo
 -------------
+Connect any mesh node's serial port to your PC or Raspberry Pi, then
 On ubuntu:
   cd app
   python3 mesh.py
