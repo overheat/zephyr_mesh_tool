@@ -1,6 +1,6 @@
-Cayenne MQTT Python Library
-***************************
-The Cayenne MQTT Python Library provides functions to easily connect to the `Cayenne IoT project builder <https://mydevices.com>`_. With it you can send data to and receive data from Cayenne.
+Zephyr mesh demo python tool
+****************************
+The Zephyr mesh demo python tool provides functions to easily connect to the `Cayenne IoT project builder <https://mydevices.com>`_. With it you can send zephyr mesh demo data to Cayenne.
 
 Requirements
 ============
@@ -29,44 +29,11 @@ Cayenne Setup
 1. Create your Cayenne account at https://mydevices.com.
 2. Add a new device using the Bring Your Own Thing API selection.
 
-Examples
---------
-Simple examples are available in the repository here: https://github.com/myDevicesIoT/Cayenne-MQTT-Python/tree/master/examples.
-
-Below is an example of a simple client that publishes some sample data and receives data from Cayenne in a message callback. The Cayenne authentication variables must be modified with the authentication info you received when adding a new device in Cayenne:
-::
-
-  import cayenne.client
-  import time
-
-  # Cayenne authentication info. This should be obtained from the Cayenne Dashboard.
-  MQTT_USERNAME  = "MQTT_USERNAME"
-  MQTT_PASSWORD  = "MQTT_PASSWORD"
-  MQTT_CLIENT_ID = "MQTT_CLIENT_ID"
-
-  # The callback for when a message is received from Cayenne.
-  def on_message(message):
-    print("message received: " + str(message))
-    # If there is an error processing the message return an error string, otherwise return nothing.
-    
-  client = cayenne.client.CayenneMQTTClient()
-  client.on_message = on_message
-  client.begin(MQTT_USERNAME, MQTT_PASSWORD, MQTT_CLIENT_ID)
-  # For a secure connection use port 8883 when calling client.begin:
-  # client.begin(MQTT_USERNAME, MQTT_PASSWORD, MQTT_CLIENT_ID, port=8883)
-
-  i=0
-  timestamp = 0
-
-  while True:
-    client.loop()
-    
-    if (time.time() > timestamp + 10):
-      client.celsiusWrite(1, i)
-      client.luxWrite(2, i*10)
-      client.hectoPascalWrite(3, i+800)
-      timestamp = time.time()
-      i = i+1
+Demo
+-------------
+On ubuntu:
+  cd app
+  python3 mesh.py
 
 Documentation
 -------------
