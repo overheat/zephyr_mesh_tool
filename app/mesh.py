@@ -20,16 +20,18 @@ client.begin(MQTT_USERNAME, MQTT_PASSWORD, MQTT_CLIENT_ID, loglevel=logging.INFO
 
 i=0
 timestamp = 0
+                    
+#print (ser.portstr)       # check which port was really used  
+print('Please input serial port number:')
+serPortNum = input()
+serPort = 'COM' + serPortNum
 
-ser = serial.Serial('COM14', # Device name varies
+ser = serial.Serial(serPort, # Device name varies
                     baudrate=115200,
                     bytesize=8,
                     parity='N',
                     stopbits=1,
                     timeout=1)
-                    
-print (ser.portstr)       # check which port was really used  
-        
         
 while True:
     client.loop()
