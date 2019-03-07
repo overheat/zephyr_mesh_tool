@@ -42,7 +42,7 @@ Setup Zephyr Bluetooth Mesh Demo from `here <https://docs.zephyrproject.org/late
 
 Connect any mesh node's serial port to your PC or Raspberry Pi, then
 
-On ubuntu:
+ On ubuntu:
   python3 app/mesh.py
 
 Documentation
