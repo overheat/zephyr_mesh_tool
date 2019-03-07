@@ -21,11 +21,11 @@ Installation
 This library can be installed using pip:
 ::
 
-On ubuntu:
+  On ubuntu:
   pip3 install cayenne-mqtt && pip3 install pyserial
 
 
-On ubuntu:
+  On ubuntu:
   git clone https://github.com/overheat/zephyr_mesh_tool.git
   cd zephyr_mesh_tool
   python3 setup.py install
