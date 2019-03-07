@@ -22,15 +22,12 @@ This library can be installed using pip:
 ::
 
 On ubuntu:
-  pip install cayenne-mqtt
-  pip3 install pyserial
+  pip3 install cayenne-mqtt && pip3 install pyserial
 
-It can also be installed from the repository:
-::
 
 On ubuntu:
-  git clone https://github.com/myDevicesIoT/Cayenne-MQTT-Python
-  cd Cayenne-MQTT-Python
+  git clone https://github.com/overheat/zephyr_mesh_tool.git
+  cd zephyr_mesh_tool
   python3 setup.py install
   
 Cayenne Setup
@@ -40,6 +37,9 @@ Cayenne Setup
 
 Demo
 -------------
+Setup Zephyr Bluetooth Mesh Demo from `here <https://docs.zephyrproject.org/latest/samples/bluetooth/mesh_demo/README.html>`_.
+  
+
 Connect any mesh node's serial port to your PC or Raspberry Pi, then
 
 On ubuntu:
